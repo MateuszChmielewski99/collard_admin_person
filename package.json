@@ -8,7 +8,7 @@
     "src"
   ],
   "engines": {
-    "node": ">=10"
+    "node": "12.18.0"
   },
   "scripts": {
     "start": "node dist/index.js",
@@ -16,7 +16,6 @@
     "build": "tsdx build",
     "test": "tsdx test",
     "lint": "tsdx lint",
-    "prepare": "yarn build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "prettier-format": "prettier --write src/**/*.ts",
@@ -65,6 +64,7 @@
     "mongodb": "^3.6.2",
     "nodemon": "^2.0.6",
     "reflect-metadata": "^0.1.13",
-    "tsyringe": "^4.3.0"
+    "tsyringe": "^4.3.0",
+    "tslib": "^2.0.3"
   }
 }
