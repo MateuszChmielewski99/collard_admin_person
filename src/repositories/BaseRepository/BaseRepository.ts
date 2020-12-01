@@ -118,11 +118,10 @@ export class BaseRepository<T extends { _id?: string }> {
   }
 
   private getConnectionUri = () => {
-    const envVars = dotenv.config({ path: 'src/.env' });
     const connectionUri =
       'mongodb+srv://BonuzAdmin:<password>@collard.1i3y6.mongodb.net/<dbname>?retryWrites=true&w=majority';
     return connectionUri
-      .replace('<password>', envVars.parsed?.MONGO_PASSWORD as string)
-      .replace('<dbname>', envVars.parsed?.DBNAME as string);
+      .replace('<password>', process.env.MONGO_PASSWORD as string)
+      .replace('<dbname>', process.env.DBNAME as string);
   };
 }
